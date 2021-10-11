@@ -1,0 +1,432 @@
+{
+	"version": 1,
+	"collections": [
+		{
+			"id": "54c15110-958a-4925-b7da-7d82c7652dc9",
+			"name": "pet",
+			"description": "",
+			"auth": null,
+			"events": null,
+			"variables": [],
+			"order": [
+				"79c85cec-e14f-4da3-82d2-71a84551995a",
+				"c12c82b6-e6b6-41a7-849d-7072e9c400e5",
+				"bf0940c6-e46b-4eca-9af3-58e5daf61706",
+				"b8276bda-b582-43f0-9cad-229a36ba37ca",
+				"ecf636ac-e98f-428e-98f3-d851652a0aa4"
+			],
+			"folders_order": [],
+			"protocolProfileBehavior": {},
+			"folders": [],
+			"requests": [
+				{
+					"id": "79c85cec-e14f-4da3-82d2-71a84551995a",
+					"name": "Get pet",
+					"url": "{{base}}/pet/9222968140496921113",
+					"description": "",
+					"data": null,
+					"dataOptions": null,
+					"dataMode": null,
+					"headerData": [],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "88c0e63c-a15e-460b-9f30-e2e48403c351",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Body matches string\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"myAwsomeDog\");\r",
+									"\r",
+									"});\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"folder": null,
+					"preRequestScript": null,
+					"tests": "pm.test(\"Status code is 200\", function () {\r\n    pm.response.to.have.status(200);\r\n});\r\npm.test(\"Body matches string\", function () {\r\n    pm.expect(pm.response.text()).to.include(\"myAwsomeDog\");\r\n\r\n});\r\n\r\n\r\n",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "54c15110-958a-4925-b7da-7d82c7652dc9",
+					"headers": "",
+					"pathVariables": {}
+				},
+				{
+					"id": "b8276bda-b582-43f0-9cad-229a36ba37ca",
+					"name": "Get pet by status",
+					"url": "{{base}}/pet/findByStatus?status=pending",
+					"description": "",
+					"data": null,
+					"dataOptions": null,
+					"dataMode": null,
+					"headerData": [],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [
+						{
+							"key": "status",
+							"value": "pending",
+							"equals": true,
+							"description": "",
+							"enabled": true
+						}
+					],
+					"auth": null,
+					"events": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d9d9f426-2644-4c6b-b76e-119fe3b448e3",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Body matches string\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"myAwsomeDog\");\r",
+									"\r",
+									"});\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"folder": null,
+					"preRequestScript": null,
+					"tests": "pm.test(\"Status code is 200\", function () {\r\n    pm.response.to.have.status(200);\r\n});\r\npm.test(\"Body matches string\", function () {\r\n    pm.expect(pm.response.text()).to.include(\"myAwsomeDog\");\r\n\r\n});\r\n\r\n\r\n",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "54c15110-958a-4925-b7da-7d82c7652dc9",
+					"headers": "",
+					"pathVariables": {}
+				},
+				{
+					"id": "bf0940c6-e46b-4eca-9af3-58e5daf61706",
+					"name": "Update pet",
+					"url": "{{base}}/pet",
+					"description": "",
+					"data": [],
+					"dataOptions": {
+						"raw": {
+							"language": "json"
+						}
+					},
+					"dataMode": "raw",
+					"headerData": [],
+					"method": "PUT",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": null,
+					"folder": null,
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "54c15110-958a-4925-b7da-7d82c7652dc9",
+					"rawModeData": "{\r\n    \"id\": 9222968140496921062,\r\n    \"category\": {\r\n        \"id\": 0,\r\n        \"name\": \"string\"\r\n    },\r\n    \"name\": \"myAwsomeDog\",\r\n    \"photoUrls\": [\r\n        \"stillNoPhoto\"\r\n    ],\r\n    \"tags\": [\r\n        {\r\n            \"id\": 0,\r\n            \"name\": \"string\"\r\n        }\r\n    ],\r\n    \"status\": \"available\"\r\n}",
+					"headers": "",
+					"pathVariables": {}
+				},
+				{
+					"id": "c12c82b6-e6b6-41a7-849d-7072e9c400e5",
+					"name": "Create pet",
+					"url": "{{base}}/pet",
+					"description": "",
+					"data": [],
+					"dataOptions": {
+						"raw": {
+							"language": "json"
+						}
+					},
+					"dataMode": "raw",
+					"headerData": [],
+					"method": "POST",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "477f10fc-8c73-4278-bf98-2730aa05b092",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "dd11e206-91bd-49ea-8ac7-fc0a5b98e302",
+								"exec": [
+									"var JSONbig = require('json-bigint');\r",
+									"\r",
+									"console.log(JSONbig(pm.response.json().id));\r",
+									"pm.globals.set(\"petID\", pm.response.json().id);\r",
+									"pm.environment.get(\"variable_key\");\r",
+									"pm.globals.get(\"variable_key\");\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"folder": null,
+					"preRequestScript": null,
+					"tests": "var JSONbig = require('json-bigint');\r\n\r\nconsole.log(JSONbig(pm.response.json().id));\r\npm.globals.set(\"petID\", pm.response.json().id);\r\npm.environment.get(\"variable_key\");\r\npm.globals.get(\"variable_key\");\r\n\r\n",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "54c15110-958a-4925-b7da-7d82c7652dc9",
+					"rawModeData": "{\r\n\r\n    \"category\": {\r\n        \"id\": 15,\r\n        \"name\": \"string\"\r\n    },\r\n    \"name\": \"myAwsomeDog\",\r\n    \"photoUrls\": [\r\n        \"string\"\r\n    ],\r\n    \"tags\": [\r\n        {\r\n            \"id\": 0,\r\n            \"name\": \"string\"\r\n        }\r\n    ],\r\n    \"status\": \"available\"\r\n}",
+					"headers": "",
+					"pathVariables": {}
+				},
+				{
+					"id": "ecf636ac-e98f-428e-98f3-d851652a0aa4",
+					"name": "Delete pet",
+					"url": "{{base}}/pet/9222968140496921062",
+					"description": "",
+					"data": null,
+					"dataOptions": null,
+					"dataMode": null,
+					"headerData": [],
+					"method": "DELETE",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": null,
+					"folder": null,
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "54c15110-958a-4925-b7da-7d82c7652dc9",
+					"headers": "",
+					"pathVariables": {}
+				}
+			]
+		},
+		{
+			"id": "71985f79-4d33-4bed-b34e-944d3d2137a4",
+			"name": "user",
+			"description": "",
+			"auth": null,
+			"events": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "756314e9-1e98-4eff-9390-441a7e187b1e",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "289d2c99-e1ac-423b-8b96-17433b7828de",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"variables": [
+				{
+					"key": "petID",
+					"value": "",
+					"disabled": false
+				},
+				{
+					"key": "userID",
+					"value": "",
+					"disabled": false
+				}
+			],
+			"order": [
+				"a893ac39-3c10-4e91-8f0d-e47b77dd99c3",
+				"b7796c82-a6c2-40f7-b006-dc772b763753",
+				"73412ae0-fb69-4e99-8543-465719b86c86"
+			],
+			"folders_order": [],
+			"protocolProfileBehavior": {},
+			"folders": [],
+			"requests": [
+				{
+					"id": "73412ae0-fb69-4e99-8543-465719b86c86",
+					"name": "Delete user",
+					"url": "{{base}}/user/{{userName}}",
+					"description": "",
+					"data": null,
+					"dataOptions": {
+						"raw": {
+							"language": "json"
+						}
+					},
+					"dataMode": null,
+					"headerData": [],
+					"method": "DELETE",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ba0103ff-e313-41d4-8940-fa6ac3c8d8f3",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Body matches string\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(pm.environment.get(\"userName\"));\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"folder": null,
+					"preRequestScript": null,
+					"tests": "pm.test(\"Status code is 200\", function () {\r\n    pm.response.to.have.status(200);\r\n});\r\n\r\npm.test(\"Body matches string\", function () {\r\n    pm.expect(pm.response.text()).to.include(pm.environment.get(\"userName\"));\r\n});",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "71985f79-4d33-4bed-b34e-944d3d2137a4",
+					"headers": "",
+					"pathVariables": {}
+				},
+				{
+					"id": "a893ac39-3c10-4e91-8f0d-e47b77dd99c3",
+					"name": "Create user",
+					"url": "{{base}}/user",
+					"description": "",
+					"data": [],
+					"dataOptions": {
+						"raw": {
+							"language": "json"
+						}
+					},
+					"dataMode": "raw",
+					"headerData": [],
+					"method": "POST",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "821c39d3-bbbb-4633-a64a-f237f38ae55d",
+								"exec": [
+									"var req = JSON.parse(request.data);\r",
+									"console.log(req.username);\r",
+									"pm.environment.set(\"userName\", req.username);\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"folder": null,
+					"preRequestScript": null,
+					"tests": "var req = JSON.parse(request.data);\r\nconsole.log(req.username);\r\npm.environment.set(\"userName\", req.username);\r\n\r\n",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "71985f79-4d33-4bed-b34e-944d3d2137a4",
+					"rawModeData": "{\r\n  \"username\": \"Karl\",\r\n  \"firstName\": \"string\",\r\n  \"lastName\": \"string\",\r\n  \"email\": \"string\",\r\n  \"password\": \"string\",\r\n  \"phone\": \"string\",\r\n  \"userStatus\": 1\r\n}",
+					"headers": "",
+					"pathVariables": {}
+				},
+				{
+					"id": "b7796c82-a6c2-40f7-b006-dc772b763753",
+					"name": "Get user",
+					"url": "{{base}}/user/{{userName}}",
+					"description": "",
+					"data": [],
+					"dataOptions": {
+						"raw": {
+							"language": "json"
+						}
+					},
+					"dataMode": "raw",
+					"headerData": [],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "75ca3b2f-c205-41f0-a9d1-93bfe0a62d61",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Body matches string\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(pm.environment.get(\"userName\"));\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"folder": null,
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"preRequestScript": null,
+					"tests": "pm.test(\"Status code is 200\", function () {\r\n    pm.response.to.have.status(200);\r\n});\r\n\r\npm.test(\"Body matches string\", function () {\r\n    pm.expect(pm.response.text()).to.include(pm.environment.get(\"userName\"));\r\n});",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "71985f79-4d33-4bed-b34e-944d3d2137a4",
+					"rawModeData": "{\r\n    \"username\": \"Karl\",\r\n    \"firstName\": \"string\",\r\n    \"lastName\": \"string\",\r\n    \"email\": \"string\",\r\n    \"password\": \"string\",\r\n    \"phone\": \"string\",\r\n    \"userStatus\": 0\r\n}",
+					"headers": "",
+					"pathVariables": {}
+				}
+			]
+		}
+	],
+	"environments": [
+		{
+			"id": "f6b30aa1-0f75-463e-ae65-6038594b2382",
+			"name": "v2domen",
+			"values": [
+				{
+					"key": "base",
+					"value": "https://petstore.swagger.io/v2",
+					"enabled": true
+				},
+				{
+					"key": "userName",
+					"value": "",
+					"enabled": true
+				}
+			]
+		},
+		{
+			"id": "509237c5-d155-4d81-882a-3dbfc38feb70",
+			"name": "My Workspace - globals",
+			"values": []
+		}
+	],
+	"headerPresets": [],
+	"globals": []
+}
